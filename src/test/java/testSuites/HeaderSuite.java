@@ -7,10 +7,10 @@ import org.testng.annotations.Test;
 public class HeaderSuite extends BaseTest {
     @Test
     public void checkCustomMenu() throws Exception{
-        //String excelFilePath = "C:/Users/MiguelTorres/Documents/SELENIUM PROJECTS/Gradle-Tutorial-IntelliJIDEA/data/Browser Data.xlsx";
-        String excelFilePath = "C:/Users/MiguelTorres/Documents/SELENIUM PROJECTS/Gradle-Tutorial-IntelliJIDEA/data/New User.xlsx";
+        //String excelFilePath = "C:/Users/MiguelTorres/Documents/SELENIUM PROJECTS/Gradle-Tutorial-IntelliJIDEA/data/BrowsNavigate Dataxlsx";
+        String excelFilePath = "C:/Users/MiguelTorres/Documents/SELENIUM PROJECTS/Gradle-Tutorial-IntelliJIDEA/data/Navigate Data.xlsx";
         String excelSheetName = "Sheet1";
-        String testCaseName = "Test Case Name1";
+        String testCaseName = "Test Case Name5";
         VariableAssignation variableAssignation = new VariableAssignation();
         //String [] excelData= new String[]{"Apple","Banana","Orange"};
         ReadExcelFile readExcelFile = new ReadExcelFile();

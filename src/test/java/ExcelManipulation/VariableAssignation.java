@@ -1,8 +1,4 @@
 package ExcelManipulation;
-
-import net.bytebuddy.implementation.MethodCall;
-import org.jetbrains.annotations.NotNull;
-
 public class VariableAssignation {
     private String browser, url, fullName, email, password, confirmPassword;
     public String getBrowser() {
@@ -52,9 +48,9 @@ public class VariableAssignation {
     public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
     }
-    public void arrayVariableAssignation(String[] @NotNull [] excelDataExtraction){
+    public void arrayVariableAssignation(String[][] excelDataExtraction){
 
-        for (int i = 0; i < excelDataExtraction.length ; i++) {
+        for (int i = 0; i < excelDataExtraction.length ;) {
             for (int j = 0; j < excelDataExtraction[i].length ; j++) {
                 switch (excelDataExtraction[i][j]){
                     case "Browser":

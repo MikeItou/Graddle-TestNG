@@ -7,6 +7,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 public class ReadExcelFile {
+    /*
     public void readExcel (String filePath, String sheetName) throws IOException {
         File file = new File(filePath);
         FileInputStream inputStream = new FileInputStream(file);
@@ -44,6 +45,7 @@ public class ReadExcelFile {
         if (cell != null) return cell.getStringCellValue();
         else return " ";
     }
+     */
 
     public  String[][] extractDataFromExcel(String filePath, String sheetName, String testCaseName) throws IOException {
         File file = new File(filePath);
@@ -71,8 +73,7 @@ public class ReadExcelFile {
                 break;
             }
         }
-
-        //Extraer la data con base en la fila obtenida
+        //Extraer la data con base en la fila obtenida del ciclo previo
         for (int i = 0; i <= 1; i++) {
 
             if (i == 0) row = newSheet.getRow(i);
@@ -84,15 +85,6 @@ public class ReadExcelFile {
                 else excelDataExtracted[i][j-1] = null;
             }
         }
-
-        /*for (int i = 0; i <= 2; i++) {
-            for (int j = 0; j < originalCellCount; j++) {
-                System.out.printf(excelDataExtracted[i][j] + " ");
-            }
-            System.out.println(".");
-        }
-
-         */
         return excelDataExtracted;
     }
 }
