@@ -23,7 +23,7 @@ public class BaseTest {
         }
         this.driver.manage().window().maximize();
         this.driver.get(url);
-        //your methods for each pages goes here
+        //los metodos de cada pagina van aqui
         signInPage = new SignInPage(driver);
         headerPage = new HeaderPage(driver);
         myLocationPage = new MyLocationPage(driver);
