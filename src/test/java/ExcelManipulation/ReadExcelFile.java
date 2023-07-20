@@ -1,7 +1,6 @@
 package ExcelManipulation;
 
 import org.apache.poi.xssf.usermodel.*;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -82,9 +81,27 @@ public class ReadExcelFile {
             for (int j = 1; j <= originalCellCount; j++) {
 
                 if (row.getCell(j) != null) excelDataExtracted[i][j-1] = row.getCell(j).getStringCellValue();
-                else excelDataExtracted[i][j-1] = null;
+                else excelDataExtracted[i][j-1] = "";
             }
         }
         return excelDataExtracted;
+    }
+
+    public int[][] getRowColumExcel(String filePath, String sheetName) throws Exception{
+        File file = new File(filePath);
+        FileInputStream inputStream = new FileInputStream(file);
+        XSSFWorkbook newWorkbook = new XSSFWorkbook(inputStream);
+        XSSFSheet newSheet = newWorkbook.getSheet(sheetName);
+        XSSFRow row;
+
+        row = newSheet.getRow(0);
+        int originalCellCount = row.getLastCellNum() - row.getFirstCellNum() - 1;
+        int originalRowCount = newSheet.getLastRowNum();
+        int rowAndColumExcel[][] = new int[originalRowCount][originalCellCount];
+
+        System.out.println("Fila: " + originalRowCount);
+        System.out.println("Columna: " + originalCellCount);
+
+        return rowAndColumExcel;
     }
 }
