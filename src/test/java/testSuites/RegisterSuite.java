@@ -14,7 +14,6 @@ public class RegisterSuite extends BaseTest{
         ReadExcelFile readExcelFile = new ReadExcelFile();
         VariableAssignation variableAssignation = new VariableAssignation();
         String[][] arrayExcelExtracted;
-        //int rowInUse=1;
         int[][] rowColumExcelData = readExcelFile.getRowColumExcel(excelFilePath,excelSheetName);
 
         for (int i = 0; i < rowColumExcelData.length ; i++) {

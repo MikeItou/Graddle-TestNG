@@ -5,19 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class HeaderPage extends ActionPage {
-
-    //HOME MENU
-    //WORLD CLOCK MENU
-    //TIME ZONES MENU
-    //CALENDAR MENU
-    //WEATHER MENU
-    //SUN & MOON MENU
-    //TIMERS MENU
-    //CALCULATORS MENU
-    //APS & API MENU
-    //FREE FUN MENU
-
-    //CUSTOM MENU
     @FindBy(xpath="//a[@class='site-nav__title' and contains(@href,'/custom/')]")
     WebElement customMenuButton;
     @FindBy(xpath="//a[text()='My Location']")
@@ -37,23 +24,8 @@ public class HeaderPage extends ActionPage {
     @FindBy(xpath="//a[@id='popreg']")
     WebElement registerButton;
 
-/*
-    @FindBy(css="[type='text'][name='fullname']")
-    WebElement registerUserNameField;
-    @FindBy(css="[type='email'][name='email']")
-    WebElement registerEmailField;
-    @FindBy(css="[id='password']")
-    WebElement registerPasswordField;
-    @FindBy(css="[id='password1']")
-    WebElement registerConfirmPasswordField;
-    @FindBy(css="[id='create']")
-    WebElement createAccountButton;
-    @FindBy(css="[class='submit ghost fl']")
-    WebElement cancelButton;
- */
     public HeaderPage(WebDriver driver){super(driver);}
 
-    //CUSTOM MENU
     public void  clickCustomMenuButton(){
         waitForElementVisible(customMenuButton);
         clickElement(customMenuButton);

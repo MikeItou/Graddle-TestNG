@@ -53,15 +53,10 @@ public class WriteExcelFile {
     public void writeCellValue(String filepath, String sheetName, int rowNumber, int cellNumber, String resultText) throws IOException {
 
         File file = new File(filepath);
-
         FileInputStream inputStream = new FileInputStream(file);
-
         XSSFWorkbook newWorkbook = new XSSFWorkbook(inputStream);
-
         XSSFSheet newSheet = newWorkbook.getSheet(sheetName);
-
         XSSFRow row = newSheet.getRow(rowNumber);
-
         XSSFCell firstCell = row.getCell(cellNumber - 1);
 
         System.out.println("first cell Value is:"+ firstCell.getStringCellValue());
@@ -70,14 +65,9 @@ public class WriteExcelFile {
         nextCell.setCellValue(resultText);
 
         System.out.println("next Cell value: " + nextCell.getStringCellValue());
-
         inputStream.close();
-
         FileOutputStream outputStream = new FileOutputStream(file);
-
         newWorkbook.write(outputStream);
-
         outputStream.close();
-
     }
 }

@@ -12,14 +12,14 @@ public class HeaderSuite extends BaseTest {
         String excelSheetName = "Sheet1";
         String testCaseName;
         VariableAssignation variableAssignation = new VariableAssignation();
-        //String [] excelData= new String[]{"Apple","Banana","Orange"};
         ReadExcelFile readExcelFile = new ReadExcelFile();
-        //WriteExcelFile writeExcelFile = new WriteExcelFile();
         String[][] arrayExcelExtracted;
-
-        //readExcelFile.readExcel(excelFilePath,excelSheetName);
-
         int[][] rowColumExcelData = readExcelFile.getRowColumExcel(excelFilePath,excelSheetName);
+
+        //String [] excelData= new String[]{"Apple","Banana","Orange"};
+        //WriteExcelFile writeExcelFile = new WriteExcelFile();
+        //readExcelFile.readExcel(excelFilePath,excelSheetName);
+        //writeExcelFile.writeInExcel(excelFilePath,excelSheetName,excelData,rowInUse);
 
         for (int i = 0; i < rowColumExcelData.length; i++) {
             testCaseName = String.format("Test Case Name%s",i+1);
@@ -39,12 +39,7 @@ public class HeaderSuite extends BaseTest {
             signInPage.clickCloseCrossButton();
             headerPage.clickRegisterButton();
             registerPage.clickCloseCrossButton();
+            actionPage.closeBrowser();
         }
-
-
-       /*
-        //writeExcelFile.writeInExcel(excelFilePath,excelSheetName,excelData,rowInUse);
-
-        */
     }
 }

@@ -29,4 +29,5 @@ public class ActionPage {
         this.actions.click(element).perform();
     }
     protected void fillField(WebElement element, String dataToUse){this.actions.sendKeys(element,dataToUse).perform();}
+    public void closeBrowser(){this.driver.quit();}
 }

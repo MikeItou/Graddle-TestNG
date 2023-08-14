@@ -5,7 +5,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
-import org.testng.annotations.AfterTest;
 import pages.*;
 
 public class BaseTest {
@@ -14,6 +13,7 @@ public class BaseTest {
     protected HeaderPage headerPage;
     protected MyLocationPage myLocationPage;
     protected RegisterPage registerPage;
+    protected ActionPage actionPage;
     public void setupWebPage(String browser, String url){
         switch (browser){
             case "chrome" -> driver = new ChromeDriver();
@@ -24,14 +24,10 @@ public class BaseTest {
         this.driver.manage().window().maximize();
         this.driver.get(url);
         //los metodos de cada pagina van aqui
-        signInPage = new SignInPage(driver);
+        actionPage = new ActionPage(driver);
         headerPage = new HeaderPage(driver);
         myLocationPage = new MyLocationPage(driver);
         registerPage = new RegisterPage(driver);
-    }
-
-    @AfterTest
-    public void after(){
-        //this.driver.quit();
+        signInPage = new SignInPage(driver);
     }
 }
